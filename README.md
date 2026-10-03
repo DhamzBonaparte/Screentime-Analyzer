@@ -6,7 +6,7 @@ An AI-powered full-stack web application designed to evaluate behavioral metrics
 
 ## ✨ Features
 
-- **Dual-Model Inference Dashboard:** Switch seamlessly between a **Regression Model** (to predict screentime targets) and a **Classification Model** (to evaluate sleep health risk tiers).
+- **Dual-Model Inference Dashboard:** Switch seamlessly between a **Regression Model** (to predict next day fatigue score) and a **Classification Model** (to evaluate sleep health risk tiers).
 - **Comprehensive Behavioral Metrics:** Analyzes 15 distinct user parameters including age, occupation, chronotype, bedtime phone usage, app preferences, screen brightness, blue light filter status, caffeine intake, physical activity, and sleep architecture percentages.
 - **Strict Frontend Validation:** Built-in constraints and validation rules for secure, accurate user inputs.
 - **Modern Dark-Mode UI:** Designed with a sleek, tech-forward aesthetic, smooth transitions, and responsive layout styling.
