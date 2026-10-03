@@ -27,6 +27,8 @@ export default function Analyzer() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [validationErrors, setValidationErrors] = useState({});
+  const regressionUri = import.meta.env.VITE_REGRESSION_URI;
+  const classificationUri = import.meta.env.VITE_CLASSIFICATION_URI;
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
@@ -85,13 +87,13 @@ export default function Analyzer() {
     try {
       if (activeTab === "regression") {
         const response = await axios.post(
-          "http://127.0.0.1:8000/regression-prediction",
+          regressionUri,
           formData,
         );
         setRegressionResult(response.data);
       } else {
         const response = await axios.post(
-          "http://127.0.0.1:8000/classification-prediction",
+          classificationUri,
           formData,
         );
         setClassificationResult(response.data);
