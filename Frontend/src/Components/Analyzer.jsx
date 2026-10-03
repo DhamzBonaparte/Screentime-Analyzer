@@ -392,10 +392,10 @@ export default function Analyzer() {
               {regressionResult ? (
                 <div className="metric-display animate-fade">
                   <span className="metric-label">
-                    Predicted Screentime Target
+                    Predicted Next Day Fatigue Score
                   </span>
                   <span className="metric-value">
-                    {regressionResult.prediction?.toFixed(2)} <small>hrs</small>
+                    {regressionResult.prediction?.toFixed(2)}
                   </span>
                 </div>
               ) : (
