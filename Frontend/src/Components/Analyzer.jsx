@@ -33,13 +33,27 @@ export default function Analyzer() {
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
+
+    let parsedValue = value;
+
+    if (type === "number") {
+      parsedValue = value === "" ? "" : parseFloat(value);
+    } else if (name === "blue_light_filter_active") {
+      // Explicitly force blue light filter to be an integer (0 or 1)
+      parsedValue = parseInt(value, 10);
+    }
+
     setFormData({
       ...formData,
-      [name]: type === "number" ? parseFloat(value) : value,
+      [name]: parsedValue,
     });
+
     if (validationErrors[name]) {
       setValidationErrors({ ...validationErrors, [name]: null });
     }
+
+    setRegressionResult(null);
+    setClassificationResult(null);
   };
 
   const validateForm = () => {
