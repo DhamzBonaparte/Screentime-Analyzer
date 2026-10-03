@@ -27,6 +27,7 @@ export default function Analyzer() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [validationErrors, setValidationErrors] = useState({});
+  const [hasWokenUp, setHasWokenUp] = useState(false);
   const regressionUri = import.meta.env.VITE_REGRESSION_URI;
   const classificationUri = import.meta.env.VITE_CLASSIFICATION_URI;
 
@@ -86,18 +87,13 @@ export default function Analyzer() {
 
     try {
       if (activeTab === "regression") {
-        const response = await axios.post(
-          regressionUri,
-          formData,
-        );
+        const response = await axios.post(regressionUri, formData);
         setRegressionResult(response.data);
       } else {
-        const response = await axios.post(
-          classificationUri,
-          formData,
-        );
+        const response = await axios.post(classificationUri, formData);
         setClassificationResult(response.data);
       }
+      setHasWokenUp(true);
     } catch (err) {
       console.error(err);
       setError(
@@ -367,11 +363,19 @@ export default function Analyzer() {
             disabled={loading}
             className="submit-action-btn"
           >
-            {loading
-              ? "Processing Inference..."
-              : activeTab === "regression"
-                ? "Calculate Screentime Projection"
-                : "Evaluate Sleep Risk Category"}
+            {loading ? (
+              <span className="loading-state-text">
+                {hasWokenUp ? (
+                  "Processing Inference..."
+                ) : (
+                  <>⏳ Waking up AI server (~30s, happens once)...</>
+                )}
+              </span>
+            ) : activeTab === "regression" ? (
+              "Calculate Screentime Projection"
+            ) : (
+              "Evaluate Sleep Risk Category"
+            )}
           </button>
         </form>
 
