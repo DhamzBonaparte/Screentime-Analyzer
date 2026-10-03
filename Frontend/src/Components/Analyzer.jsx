@@ -142,7 +142,7 @@ export default function Analyzer() {
         <form onSubmit={handleSubmit} className="prediction-form">
           <div className="form-section-title">
             {activeTab === "regression"
-              ? "Input Parameters for Screentime Prediction"
+              ? "Input Parameters to find your next day fatigue score"
               : "Input Parameters for Sleep Debt Evaluation"}
           </div>
 
