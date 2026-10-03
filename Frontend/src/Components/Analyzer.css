@@ -371,3 +371,241 @@ body {
   50% { opacity: 1; }
   100% { opacity: 0.6; }
 }
+
+/* Container & Wrapper */
+.analyzer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  background-color: #0b0f19;
+  box-sizing: border-box;
+}
+
+.analyzer-card {
+  width: 100%;
+  max-width: 900px;
+  background: #131827;
+  border: 1px solid #1f293d;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+/* Header */
+.analyzer-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.analyzer-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #f3f4f6;
+  margin: 8px 0;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tab-pill {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #1f293d;
+  border: 1px solid #374151;
+  color: #d1d5db;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  text-align: center;
+}
+
+.tab-pill.active {
+  background: #3b82f6;
+  border-color: #60a5fa;
+  color: #ffffff;
+}
+
+/* Form Grid System */
+.form-section-title {
+  font-size: 1.1rem;
+  color: #93c5fd;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0b0f19;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Submit Button */
+.submit-action-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submit-action-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.submit-action-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: #1f293d;
+  border: 1px dashed #4b5563;
+}
+
+/* Results Terminal */
+.results-panel {
+  margin-top: 24px;
+  background: #0b0f19;
+  border: 1px solid #1f293d;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.results-header {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.console-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.metric-display {
+  text-align: center;
+  padding: 12px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #34d399;
+  display: block;
+  margin-top: 4px;
+}
+
+.class-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.status-description {
+  margin-top: 12px;
+  font-style: italic;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.error-banner {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.analyzer-footer-credit {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* =========================================
+   Mobile Breakpoint (Screens <= 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .analyzer-wrapper {
+    padding: 8px;
+  }
+
+  .analyzer-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  /* Collapse the 2-column input grid into a single column on phones */
+  .input-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tab-navigation {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .class-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
