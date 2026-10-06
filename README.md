@@ -23,9 +23,9 @@ An AI-powered full-stack web application designed to evaluate behavioral metrics
 ### **Backend**
 - **FastAPI** (Python framework for high-performance API endpoints)
 - **Uvicorn** (ASGI Server)
-- **scikit-learn** / **XGBoost** (Machine learning pipelines)
+- **scikit-learn** / **XGBoost** (Machine Learning Pipelines)
 - **Joblib** (Model serialization) 
-
+ 
 ---
 
 ## 📁 Project Structure
